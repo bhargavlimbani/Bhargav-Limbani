@@ -8,12 +8,12 @@ const CERTIFICATES = [
     issuer: 'Udemy',
     category: 'Development',
     date: 'March 2026',
-    file: '/react%20and%20node.js%20fullstack%20development.pdf',
+    file: '/react_node_fullstack.pdf',
     downloadName: 'Bhargav_Limbani_React_NodeJS_Certificate.pdf',
     isPdf: true,
     badge: 'FULL STACK',
     desc: 'Mastery in building full-stack web applications with React, Node.js, Express, and REST APIs.',
-    iconColor: '#3b82f6',
+    iconColor: '#7c3aed',
   },
   {
     id: 'flutter',
@@ -21,7 +21,7 @@ const CERTIFICATES = [
     issuer: 'Udemy',
     category: 'Mobile & Cyber',
     date: 'October 2025',
-    file: '/flutter.pdf',
+    file: '/flutter_certificate.pdf',
     downloadName: 'Bhargav_Limbani_Flutter_Certificate.pdf',
     isPdf: true,
     badge: 'FLUTTER',
@@ -34,7 +34,7 @@ const CERTIFICATES = [
     issuer: 'Udemy',
     category: 'Development',
     date: '2025',
-    file: '/Web%20development%20Zero%20to%20Hero%20by%20creating%20apps.pdf',
+    file: '/web_dev_zero_to_hero.pdf',
     downloadName: 'Bhargav_Limbani_Web_Development_Zero_to_Hero.pdf',
     isPdf: true,
     badge: 'WEB DEV',
@@ -47,7 +47,7 @@ const CERTIFICATES = [
     issuer: 'Udemy',
     category: 'Development',
     date: '2025',
-    file: '/Advanced%20Java%20-%20Learn%20by%20Hands-on.pdf',
+    file: '/advanced_java.pdf',
     downloadName: 'Bhargav_Limbani_Advanced_Java_Certificate.pdf',
     isPdf: true,
     badge: 'JAVA',
@@ -60,7 +60,7 @@ const CERTIFICATES = [
     issuer: 'Cisco / Networking Academy',
     category: 'Mobile & Cyber',
     date: '2025',
-    file: '/Introduction_to_Cybersecurity_certificate_limbanibhargavmaheshbhai-gmail-com_3ad11d12-48ba-4c12-86fe-ee958ab51516.pdf',
+    file: '/cybersecurity_certificate.pdf',
     downloadName: 'Bhargav_Limbani_Cybersecurity_Certificate.pdf',
     isPdf: true,
     badge: 'SECURITY',
@@ -73,7 +73,7 @@ const CERTIFICATES = [
     issuer: 'Marwadi University & GeeksforGeeks',
     category: 'Competitions & Internship',
     date: '2025',
-    file: '/ICT%20x%20GFG%20CodeJam.jpg',
+    file: '/gfg_codejam.jpg',
     downloadName: 'Bhargav_Limbani_GFG_CodeJam_Certificate.jpg',
     isPdf: false,
     badge: 'CODEJAM',
@@ -86,7 +86,7 @@ const CERTIFICATES = [
     issuer: 'Script India',
     category: 'Competitions & Internship',
     date: 'Sep 2025',
-    file: '/internship%20later.pdf',
+    file: '/internship_letter.pdf',
     downloadName: 'Bhargav_Limbani_Script_India_Internship_Certificate.pdf',
     isPdf: true,
     badge: 'INTERNSHIP',
@@ -271,7 +271,7 @@ export default function Certificates() {
                   <polyline points="15 3 21 3 21 9"/>
                   <line x1="10" y1="14" x2="21" y2="3"/>
                 </svg>
-                View Full PDF / Image 👁️
+                View Full File 👁️
               </a>
 
               <a
