@@ -15,25 +15,29 @@ export default function Contact() {
     const message = formData.get('message')
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/limbanibhargavmaheshbhai@gmail.com', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
         body: JSON.stringify({
+          access_key: '0faf8577-8388-45b1-b68f-c72bc76f2519',
           name: name,
           email: email,
           message: message,
-          _subject: `New Portfolio Message from ${name}`
+          subject: `New Portfolio Message from ${name}`
         })
       })
 
-      if (response.ok) {
+      const data = await response.json()
+
+      if (data.success) {
         setStatus('success')
         e.target.reset()
         setTimeout(() => setStatus('idle'), 5000)
       } else {
+        console.error('Web3Forms error:', data)
         setStatus('error')
         setTimeout(() => setStatus('idle'), 4000)
       }
