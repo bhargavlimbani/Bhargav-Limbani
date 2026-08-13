@@ -1,18 +1,47 @@
+import { useState } from 'react'
 import useReveal from '../hooks/useReveal'
 
 export default function Contact() {
   const [ref, visible] = useReveal()
+  const [status, setStatus] = useState('idle') // 'idle' | 'sending' | 'success' | 'error'
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
-    const btn = e.target.querySelector('.contact-submit')
-    btn.textContent = 'Message Sent! ✓'
-    btn.style.background = 'hsl(142,71%,45%)'
-    setTimeout(() => {
-      btn.textContent = 'Send Message →'
-      btn.style.background = ''
-      e.target.reset()
-    }, 3000)
+    setStatus('sending')
+
+    const formData = new FormData(e.target)
+    const name = formData.get('name')
+    const email = formData.get('email')
+    const message = formData.get('message')
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/limbanibhargavmaheshbhai@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          message: message,
+          _subject: `New Portfolio Message from ${name}`
+        })
+      })
+
+      if (response.ok) {
+        setStatus('success')
+        e.target.reset()
+        setTimeout(() => setStatus('idle'), 5000)
+      } else {
+        setStatus('error')
+        setTimeout(() => setStatus('idle'), 4000)
+      }
+    } catch (err) {
+      console.error('Contact form submission error:', err)
+      setStatus('error')
+      setTimeout(() => setStatus('idle'), 4000)
+    }
   }
 
   return (
@@ -93,18 +122,32 @@ export default function Contact() {
         </div>
 
         {/* Right — Form */}
-        <form className="contact-form" onSubmit={handleSubmit} noValidate>
+        <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <input id="contact-name" className="form-input" type="text" placeholder="Full Name" required />
+            <input id="contact-name" name="name" className="form-input" type="text" placeholder="Full Name" required />
           </div>
           <div className="form-group">
-            <input id="contact-email" className="form-input" type="email" placeholder="Email Address" required />
+            <input id="contact-email" name="email" className="form-input" type="email" placeholder="Email Address" required />
           </div>
           <div className="form-group">
-            <textarea id="contact-message" className="form-input form-textarea" placeholder="Your Message" rows="6" required />
+            <textarea id="contact-message" name="message" className="form-input form-textarea" placeholder="Your Message" rows="6" required />
           </div>
-          <button type="submit" className="contact-submit clickable">
-            Send Message →
+          <button 
+            type="submit" 
+            className="contact-submit clickable"
+            disabled={status === 'sending'}
+            style={
+              status === 'success'
+                ? { background: 'hsl(142, 71%, 45%)', borderColor: 'hsl(142, 71%, 45%)' }
+                : status === 'error'
+                ? { background: '#ef4444', borderColor: '#ef4444' }
+                : {}
+            }
+          >
+            {status === 'sending' && 'Sending Message...'}
+            {status === 'success' && 'Message Sent! ✓'}
+            {status === 'error' && 'Failed to Send ✕'}
+            {status === 'idle' && 'Send Message →'}
           </button>
         </form>
       </div>
