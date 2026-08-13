@@ -1,12 +1,13 @@
 import { useEffect, useState, useRef } from 'react'
 
 const NAV_LINKS = [
-  { href: '#home',       label: 'Home'       },
-  { href: '#about',      label: 'About'      },
-  { href: '#skills',     label: 'Skills'     },
-  { href: '#experience', label: 'Experience' },
-  { href: '#projects',   label: 'Projects'   },
-  { href: '#contact',    label: 'Contact'    },
+  { href: '#home',         label: 'Home'         },
+  { href: '#about',        label: 'About'        },
+  { href: '#skills',       label: 'Skills'       },
+  { href: '#experience',   label: 'Experience'   },
+  { href: '#certificates', label: 'Certificates' },
+  { href: '#projects',     label: 'Projects'     },
+  { href: '#contact',      label: 'Contact'      },
 ]
 
 export default function Navbar() {
