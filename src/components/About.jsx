@@ -48,7 +48,7 @@ export default function About() {
               <span className="about-stat-label">Internship</span>
             </div>
             <div className="about-stat">
-              <span className="about-stat-num">2</span>
+              <span className="about-stat-num">7</span>
               <span className="about-stat-label">Certifications</span>
             </div>
           </div>
@@ -93,7 +93,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="about-card">
+          {/* <div className="about-card">
             <div className="about-card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="20" height="20">
                 <circle cx="12" cy="8" r="4"/><path d="M8 16s0-4 4-4 4 4 4 4"/>
@@ -111,7 +111,7 @@ export default function About() {
                 <div className="cert-issuer">Udemy · Oct 2025</div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="about-card">
             <div className="about-card-icon">

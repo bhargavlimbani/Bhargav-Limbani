@@ -84,64 +84,17 @@ button {
 }
 
 /* ============================================================
-   CUSTOM CURSOR
+   CUSTOM CURSOR — 3D Cartoon Chase Canvas
    ============================================================ */
 @media (pointer: fine) {
-  .cursor-dot {
+  .cursor-canvas {
     position: fixed;
     top: 0;
     left: 0;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--accent);
+    width: 100vw;
+    height: 100vh;
     pointer-events: none;
     z-index: 9999;
-    will-change: transform;
-    transition: width 0.2s, height 0.2s, background 0.2s;
-    box-shadow: 0 0 8px var(--accent);
-  }
-
-  .cursor-ring {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 1.5px solid rgba(var(--accent-rgb), 0.5);
-    pointer-events: none;
-    z-index: 9998;
-    will-change: transform;
-    transition: width 0.25s, height 0.25s, border-color 0.25s;
-  }
-
-  .cursor-ring.hovering {
-    width: 52px;
-    height: 52px;
-    border-color: rgba(var(--accent-rgb), 0.8);
-    background: rgba(var(--accent-rgb), 0.08);
-    transform: translate(var(--rx, -18px), var(--ry, -18px)) !important;
-  }
-
-  .cursor-dot.clicking {
-    transform: scale(0.6) !important;
-  }
-
-  .cursor-ring.clicking {
-    transform: scale(0.85) !important;
-    width: 28px;
-    height: 28px;
-  }
-
-  .cursor-dot.text-cursor {
-    width: 2px;
-    height: 20px;
-    border-radius: 2px;
-  }
-
-  .cursor-ring.text-cursor {
-    opacity: 0.3;
   }
 }
 
